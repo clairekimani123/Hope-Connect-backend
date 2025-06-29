@@ -28,7 +28,9 @@ bcrypt.init_app(app)
 jwt.init_app(app)
 swagger.init_app(app)
 
-CORS(app, origins="*",allow_headers="*", methods="*", supports_credentials=True)
+# CORS(app, origins="*",allow_headers="*", supports_credentials=True)
+frontend_url = "https://hope-connect-6j9n.vercel.app"
+CORS(app, origins=[frontend_url], supports_credentials=True, methods=["GET", "POST", "PUT", "DELETE", "PATCH"])
 
 for blueprint in blueprints:
     app.register_blueprint(blueprint)

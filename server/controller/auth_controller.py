@@ -59,7 +59,7 @@ def register():
     db.session.add(new_user)
     db.session.commit()
 
-    response = jsonify({'msg': f'User {email} registered successfully'}), 201
+    response = jsonify(new_user.to_dict()), 201
     return response
 
 
@@ -169,6 +169,7 @@ def firebase_login():
         description: Missing email
     """
     data = request.get_json()
+    print(data)
     email = data.get('email')
 
     if not email:
@@ -190,6 +191,7 @@ def firebase_login():
     response = {
         'access_token': access_token,
         'id': user.id,
+        'email':user.email,
         'role': user.role
     }
     return make_response(jsonify(response), 200)
