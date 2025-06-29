@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from flask import Flask, jsonify, requestMore actions
+from flask import Flask, jsonify, request
 import os
 from server.config import db, DATABASE_URI, migrate, bcrypt, jwt,swagger, JWT_SECRET_KEY, JWT_ACCESS_TOKEN_EXPIRES
 from server.controller import blueprints
@@ -54,3 +54,5 @@ def index():
 
 
 if __name__ == '__main__':
+    app.run(port=5555, debug=True)
+    
