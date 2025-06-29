@@ -7,7 +7,6 @@ __pycache__/
 .vscode/
 .DS_Store
 .env.
-migrations/
 .idea/
 *.log
 *.pyc
