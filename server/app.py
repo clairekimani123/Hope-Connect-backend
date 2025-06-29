@@ -28,7 +28,7 @@ bcrypt.init_app(app)
 jwt.init_app(app)
 swagger.init_app(app)
 
-CORS(app, origins="*", supports_credentials=True)
+CORS(app, origins="*",allow_headers="*", methods="*", supports_credentials=True)
 
 for blueprint in blueprints:
     app.register_blueprint(blueprint)

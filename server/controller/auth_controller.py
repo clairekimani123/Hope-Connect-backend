@@ -158,7 +158,7 @@ def firebase_login():
         schema:
           type: object
           required:
-            - mail
+            - email
           properties:
             mail:
               type: string
@@ -169,7 +169,7 @@ def firebase_login():
         description: Missing email
     """
     data = request.get_json()
-    email = data.get('mail')
+    email = data.get('email')
 
     if not email:
         return jsonify({'msg': 'Email is required'}), 400
