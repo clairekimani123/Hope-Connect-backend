@@ -39,11 +39,12 @@ def register():
         description: User already exists
     """
     data = request.get_json()
+    print(data)
 
     email = data.get('email')
     password = data.get('password')
-    first_name = data.get('first_name')
-    last_name = data.get('last_name')
+    first_name = data.get('fName')
+    last_name = data.get('lName')
 
     if User.query.filter_by(email=email).first():
         return jsonify({'msg': 'User already exists'}), 409
