@@ -9,7 +9,7 @@ class Project(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String, nullable=False)  
-    date = db.Column(db.Date, default=date.today)
+    date = db.Column(db.Date, nullable=False, default=date.today)
     description = db.Column(db.String, nullable=False)
     image_url = db.Column(db.String, nullable=False)
 
