@@ -170,7 +170,7 @@ def firebase_login():
     """
     data = request.get_json()
     print(data)
-    email = data.get('email')
+    email = data.get('mail')
 
     if not email:
         return jsonify({'msg': 'Email is required'}), 400
